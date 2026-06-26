@@ -13,3 +13,11 @@ It uses basic `if-else` statements to let the user choose which conversion to pe
 2. Run the script in your terminal:
    ```bash
    python conversion.py
+
+Choose a conversion:
+1. Kilometers to Miles
+2. Celsius to Fahrenheit
+3. Kilograms to Pounds
+Enter your choice (1/2/3): 1
+Enter distance in kilometers: 10
+10 km = 6.21 miles
