@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Python Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8f9fa;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --muted: #718096;
+      --green: #38a169;
+      --green-light: #f0fff4;
+      --green-border: #c6f6d5;
+      --blue: #3182ce;
+      --blue-light: #ebf8ff;
+      --yellow: #d69e2e;
+      --yellow-light: #fffff0;
+      --purple: #805ad5;
+      --purple-light: #faf5ff;
+      --red: #e53e3e;
+      --red-light: #fff5f5;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-logo {
+      font-family: 'Fira Code', monospace;
+      font-size: 15px;
+      color: var(--green);
+      font-weight: 500;
+    }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    #hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green);
+      border: 1px solid var(--green-border);
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 4px 14px;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+    .emoji-wave { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+    .hero-ctas { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all .15s;
+    }
+    .btn-primary { background: var(--green); color: #fff; border: 1px solid var(--green); }
+    .btn-primary:hover { background: #2f855a; }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: #aaa; background: var(--bg); }
+
+    /* SECTIONS */
+    section { padding: 4rem 2rem; }
+    .section-inner { max-width: 860px; margin: 0 auto; }
+    .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .section-desc { color: var(--muted); font-size: 15px; margin-bottom: 2rem; }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .project-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .project-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .project-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .project-desc {
+      font-size: 14px;
+      color: var(--muted);
+      flex: 1;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
+    .tag {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      padding: 2px 9px;
+      border-radius: 4px;
+      font-weight: 400;
+    }
+    .tag-green  { background: var(--green-light);  color: var(--green);  border: 1px solid var(--green-border); }
+    .tag-blue   { background: var(--blue-light);   color: var(--blue);   border: 1px solid #bee3f8; }
+    .tag-yellow { background: var(--yellow-light);  color: var(--yellow); border: 1px solid #fefcbf; }
+    .tag-purple { background: var(--purple-light);  color: var(--purple); border: 1px solid #e9d8fd; }
+    .tag-red    { background: var(--red-light);    color: var(--red);    border: 1px solid #fed7d7; }
+    .project-link {
+      font-size: 13px;
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .project-link:hover { text-decoration: underline; }
+
+    /* SKILLS */
+    #skills { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .concepts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .concept-pill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-family: 'Fira Code', monospace;
+      font-size: 13px;
+      color: var(--text);
+      text-align: center;
+    }
+
+    /* ABOUT */
+    .about-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .about-box p { color: var(--muted); font-size: 15px; margin-bottom: 0.8rem; }
+    .about-box p:last-child { margin-bottom: 0; }
+    .about-box strong { color: var(--text); }
+
+    /* CONTACT */
+    #contact { background: var(--green-light); border-top: 1px solid var(--green-border); }
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--green-border);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 480px;
+    }
+    .contact-card p { color: var(--muted); font-size: 15px; margin-bottom: 1.5rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 10px; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      transition: border-color .15s;
+    }
+    .contact-link:hover { border-color: var(--green); color: var(--green); }
+
+    footer {
+      padding: 1.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+    footer p { font-size: 13px; color: var(--muted); }
+    footer a { color: var(--green); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1rem; }
+      section { padding: 3rem 1.2rem; }
+      #hero { padding: 3.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">my-python-portfolio/</span>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <span class="emoji-wave">👋</span>
+  <div class="hero-badge">Python beginner • Learning in public</div>
+  <h1>Hi, I'm <span style="color: var(--green);">Engr. Stephine Hubert E. Campos</span></h1>
+  <p class="hero-sub">I'm learning Python and building small projects to practice what I know. Here are some of the things I've made so far.</p>
+  <div class="hero-ctas">
+    <a href="#projects" class="btn btn-primary">See my projects</a>
+    <a href="https://github.com/LightYagami2k16" target="_blank" class="btn btn-ghost">GitHub profile</a>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <h2 class="section-title">My projects</h2>
+    <p class="section-desc">Five beginner projects I built while learning Python — each one helped me understand a new concept.</p>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon">🧮</div>
+        <div class="project-title">Simple Calculator</div>
+        <p class="project-desc">A command-line calculator that handles addition, subtraction, multiplication, and division. My first real Python program!</p>
+        <div class="project-tags">
+          <span class="tag tag-green">functions</span>
+          <span class="tag tag-blue">input/output</span>
+          <span class="tag tag-yellow">if/else</span>
+        </div>
+        <a class="project-link" href="https://github.com/alexrivera/python-portfolio/tree/main/project-1-calculator">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🎲</div>
+        <div class="project-title">Number Guessing Game</div>
+        <p class="project-desc">The computer picks a random number between 1 and 100 and you try to guess it. It tells you if you're too high or too low.</p>
+        <div class="project-tags">
+          <span class="tag tag-purple">while loop</span>
+          <span class="tag tag-green">random</span>
+          <span class="tag tag-blue">input/output</span>
+        </div>
+        <a class="project-link" href="https://github.com/alexrivera/python-portfolio/tree/main/project-2-number-guessing-game">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">✅</div>
+        <div class="project-title">To-Do List</div>
+        <p class="project-desc">Add tasks, mark them done, and delete them. Everything saves to a text file so your list is still there next time you open the program.</p>
+        <div class="project-tags">
+          <span class="tag tag-yellow">lists</span>
+          <span class="tag tag-red">file I/O</span>
+          <span class="tag tag-green">functions</span>
+        </div>
+        <a class="project-link" href="https://github.com/alexrivera/python-portfolio/tree/main/project-3-to-do-list">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📏</div>
+        <div class="project-title">Unit Converter</div>
+        <p class="project-desc">Convert between kilometers and miles, Celsius and Fahrenheit, and kilograms and pounds. Useful and easy to extend.</p>
+        <div class="project-tags">
+          <span class="tag tag-blue">functions</span>
+          <span class="tag tag-yellow">if/else</span>
+          <span class="tag tag-green">math</span>
+        </div>
+        <a class="project-link" href="https://github.com/alexrivera/python-portfolio/tree/main/project-4-unit-converter">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🧠</div>
+        <div class="project-title">Quiz Game</div>
+        <p class="project-desc">A multiple-choice quiz with 10 Python questions. It keeps score, gives you instant feedback, and shows your final result at the end.</p>
+        <div class="project-tags">
+          <span class="tag tag-purple">lists</span>
+          <span class="tag tag-green">for loop</span>
+          <span class="tag tag-blue">dictionaries</span>
+        </div>
+        <a class="project-link" href="https://github.com/alexrivera/python-portfolio/tree/main/project-5-quiz-game">View on GitHub →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <h2 class="section-title">Python concepts I've learned</h2>
+    <p class="section-desc">These are the building blocks I practiced through my projects.</p>
+    <div class="concepts-grid">
+      <div class="concept-pill">variables</div>
+      <div class="concept-pill">if / elif / else</div>
+      <div class="concept-pill">for loops</div>
+      <div class="concept-pill">while loops</div>
+      <div class="concept-pill">functions</div>
+      <div class="concept-pill">lists</div>
+      <div class="concept-pill">dictionaries</div>
+      <div class="concept-pill">input()</div>
+      <div class="concept-pill">print()</div>
+      <div class="concept-pill">file I/O</div>
+      <div class="concept-pill">random module</div>
+      <div class="concept-pill">string methods</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <h2 class="section-title">About me</h2>
+    <p class="section-desc" style="margin-bottom: 1.2rem;">A little about who I am and why I'm learning Python.</p>
+    <div class="about-box">
+      <p>Hi! I'm <strong>Engr. Stephine Hubert E. Campos</strong>, an electronics engineer learning Python programming. I started with zero experience and these projects are how I practice each new concept I study.</p>
+      <p>I use <strong>Python 3</strong> and run everything in the terminal. I write my code in <strong>VS Code</strong> and save everything on <strong>GitHub</strong> so I can track my progress over time.</p>
+      <p>My goal is to keep building bigger and more useful projects as I learn more. If you're also a beginner, I hope seeing my code helps you too! 🐍</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <h2 class="section-title">Say hello</h2>
+    <p class="section-desc" style="margin-bottom: 1.2rem;">Feel free to reach out — I'd love to connect with other learners!</p>
+    <div class="contact-card">
+      <p>I'm always happy to talk about Python, share tips, or just connect with other beginners on the same journey.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:alex@example.com">✉️ alex@example.com</a>
+        <a class="contact-link" href="https://github.com/LightYagami2k16" target="_blank">🐙 github.com/LightYagami2k16</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built with HTML & CSS • Code on <a href="https://github.com/LightYagami2k16/python-portfolio">GitHub</a> • MIT License © 2026 Stephine Hubert Campos</p>
+</footer>
+
+</body>
+</html>
