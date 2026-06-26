@@ -63,4 +63,4 @@ I'm a student learning Python from scratch. I post all my projects here so I can
 
 ---
 
-MIT License © 2025 Alex Rivera
+MIT License © 2026 Stephine Hubert Campos
