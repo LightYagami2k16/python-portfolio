@@ -10,9 +10,9 @@
 
 The program allows users to:
 
-* Convert **length** (e.g., meters to kilometers, centimeters to meters)
-* Convert **weight** (e.g., kilograms to grams, pounds to kilograms)
-* Convert **temperature** (e.g., Celsius to Fahrenheit and vice versa)
+* Convert **length** (kilometers to miles)
+* Convert **weight** (kilograms to pounds)
+* Convert **temperature** (Celsius to Fahrenheit)
 * Accept user input through the keyboard
 * Display the converted result in a clear and readable format
 * Handle invalid menu choices and input errors gracefully
