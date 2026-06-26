@@ -1,11 +1,11 @@
 # 🐍 My Python Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Live%20Portfolio-View%20Here-38a169?style=flat-square)](https://alexrivera.github.io/python-portfolio)
+[![Portfolio](https://img.shields.io/badge/Live%20Portfolio-View%20Here-38a169?style=flat-square)](https://lightyagami2k16.github.io/python-portfolio/)
 [![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square)](https://python.org)
 
-Hi! I'm **Alex Rivera**, a beginner Python programmer. This repository contains small projects I built while learning Python. Each project helped me practice a different concept.
+Hi! I'm **Stephine Hubert Campos**, a beginner Python programmer. This repository contains small projects I built while learning Python. Each project helped me practice a different concept.
 
-🌐 **[View my live portfolio →](https://alexrivera.github.io/python-portfolio)**
+🌐 **[View my live portfolio →](https://lightyagami2k16.github.io/python-portfolio/)**
 
 ---
 
@@ -58,7 +58,7 @@ No extra libraries needed — all projects use Python's built-in modules only.
 
 I'm a student learning Python from scratch. I post all my projects here so I can track my progress and maybe help other beginners who are on the same path.
 
-📧 [alex@example.com](mailto:alex@example.com)
+📧 [stephinehc@gmail.com](mailto:stephinehc@gmail.com)
 🐙 [github.com/LightYagami2k16](https://github.com/LightYagami2k16)
 
 ---
