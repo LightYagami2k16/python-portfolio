@@ -41,7 +41,7 @@ You need Python 3 installed. Then:
 
 ```bash
 # 1. Download this repository
-git clone https://github.com/alexrivera/python-portfolio.git
+git clone https://github.com/LightYagami2k16/python-portfolio.git
 
 # 2. Go into the project folder you want to try
 cd python-portfolio/project-1-calculator
