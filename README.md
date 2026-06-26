@@ -13,9 +13,9 @@ Hi! I'm **Stephine Hubert Campos**, a beginner Python programmer. This repositor
 
 | # | Project | What it does | Concepts practiced |
 |---|---------|-------------|-------------------|
-| 01 | [Simple Calculator](./project-1-calculator) | Add, subtract, multiply, divide | Functions, if/else, input/output |
-| 02 | [Number Guessing Game](./project-2-number-guessing-game) | Guess a random number between 1–100 | While loops, random module |
-| 03 | [To-Do List](./project-3-to-do-list) | Add, complete, and delete tasks | Lists, file I/O, functions |
+| 01 | [Simple Calculator](./Project%201%20-%20Calculator%20README.md) | Add, subtract, multiply, divide | Functions, if/else, input/output |
+| 02 | [Number Guessing Game](./Project%202%20-%20Number%20Guessing%20Game%20README.md) | Guess a random number between 1–100 | While loops, random module |
+| 03 | [To-Do List](./Project%203%20-%20To-do%20List%20README.md) | Add, complete, and delete tasks | Lists, file I/O, functions |
 | 04 | [Unit Converter](./project-4-unit-converter) | Convert km/miles, °C/°F, kg/lbs | Functions, if/else, math |
 | 05 | [Quiz Game](./project-5-quiz-game) | 10-question Python quiz with scoring | Lists, dictionaries, for loops |
 
