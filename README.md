@@ -16,7 +16,7 @@ Hi! I'm **Stephine Hubert Campos**, a beginner Python programmer. This repositor
 | 01 | [Simple Calculator](./project-1-calculator) | Add, subtract, multiply, divide | Functions, if/else, input/output |
 | 02 | [Number Guessing Game](./project-2-number-guessing-game) | Guess a random number between 1–100 | While loops, random module |
 | 03 | [To-Do List](./project-3-to-do-list) | Add, complete, and delete tasks | Lists, file I/O, functions |
-| 04 | [Unit Converter](./project-4-unit-converter) | Convert km/miles, °C/°F, kg/lbs | Functions, if/else, math |
+| 04 | [Unit Converter](./project-4-unit-conversion) | Convert km/miles, °C/°F, kg/lbs | Functions, if/else, math |
 | 05 | [Quiz Game](./project-5-quiz-game) | 10-question Python quiz with scoring | Lists, dictionaries, for loops |
 
 ---
