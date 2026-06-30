@@ -3,7 +3,7 @@
 [![Portfolio](https://img.shields.io/badge/Live%20Portfolio-View%20Here-38a169?style=flat-square)](https://lightyagami2k16.github.io/python-portfolio/)
 [![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square)](https://python.org)
 
-Hi! I'm **Stephine Hubert Campos**, a beginner Python programmer. This repository contains small projects I built while learning Python. Each project helped me practice a different concept.
+Hi! I'm **Stephine**, a beginner Python programmer. This repository contains small projects I built while learning Python. Each project helped me practice a different concept.
 
 🌐 **[View my live portfolio →](https://lightyagami2k16.github.io/python-portfolio/)**
 
